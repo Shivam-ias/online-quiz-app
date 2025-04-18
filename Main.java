@@ -5,17 +5,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-    
+        // Database connection
         Connection conn = null;
         try {
-            
+            // Connect to MySQL database
             String url = "jdbc:mysql://localhost:3306/quizdb";
             String user = "root";
-            String password = "yourpassword"; 
+            String password = "yourpassword";  // Change with your password
             conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to the database.");
 
-    
+            // Welcome message
             System.out.println("Welcome to the Online Quiz Application!");
             System.out.println("Please login to start the quiz.");
             System.out.print("Enter username: ");
@@ -23,7 +23,7 @@ public class Main {
             System.out.print("Enter password: ");
             String userPassword = scanner.nextLine();
 
-            
+            // Check if the user exists
             String query = "SELECT * FROM users WHERE username = ? AND password = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, username);
@@ -49,7 +49,7 @@ public class Main {
 
     public static void startQuiz(Connection conn, Scanner scanner) {
         try {
-        
+            // Query to get quiz questions
             String query = "SELECT * FROM questions";
             Statement stmt = conn.createStatement();
             ResultSet resultSet = stmt.executeQuery(query);
@@ -57,7 +57,7 @@ public class Main {
             int score = 0;
             int totalQuestions = 0;
 
-        
+            // Loop through the questions
             while (resultSet.next()) {
                 totalQuestions++;
                 String question = resultSet.getString("question");
@@ -67,7 +67,7 @@ public class Main {
                 String optionD = resultSet.getString("option_d");
                 String correctAnswer = resultSet.getString("correct_answer");
 
-            
+                // Display the question and options
                 System.out.println("\n" + question);
                 System.out.println("A) " + optionA);
                 System.out.println("B) " + optionB);
@@ -76,7 +76,7 @@ public class Main {
                 System.out.print("Your answer: ");
                 String userAnswer = scanner.nextLine().toUpperCase();
 
-                
+                // Check if the answer is correct
                 if (userAnswer.equals(correctAnswer)) {
                     System.out.println("Correct!");
                     score++;
@@ -85,7 +85,7 @@ public class Main {
                 }
             }
 
-            
+            // Display final score
             System.out.println("\nQuiz completed!");
             System.out.println("You scored " + score + " out of " + totalQuestions);
 
@@ -94,3 +94,6 @@ public class Main {
         }
     }
 }
+
+
+               
