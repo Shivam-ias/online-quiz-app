@@ -1,4 +1,4 @@
-# 🧠 Online Quiz Application
+# 🧠 Online Tech Quiz Application
 
 A full-stack **Online Quiz Application** developed using **Java**, **Spring Boot**, **Spring MVC**, and **MySQL**. This application provides a complete solution for online assessments, where users can register, log in, participate in quizzes, and receive instant results — all through a fully Java-based frontend and backend.
 
