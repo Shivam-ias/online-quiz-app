@@ -1,46 +1,36 @@
 # 🧠 Online Quiz Application
-A Java-based console application for conducting multiple-choice quizzes. The app connects to a MySQL database to store and retrieve questions, and allows user login and scoring.
 
-## 🚀 Features
-- ✅ User login system (credentials stored in database)
-- ❓ Add and manage quiz questions in MySQL
-- 🎯 Auto-score calculation at the end of the quiz
-- 💾 Java + JDBC for database operations
-- 🧾 SQL file included to create and populate tables
+A full-stack **Online Quiz Application** developed using **Java**, **Spring Boot**, **Spring MVC**, and **MySQL**. This application provides a complete solution for online assessments, where users can register, log in, participate in quizzes, and receive instant results — all through a fully Java-based frontend and backend.
 
-## 🛠️ Technologies Used
-- Java (Core)
-- JDBC (Java Database Connectivity)
-- MySQL
-- Git & GitHub
+This project is ideal for **educational institutions**, **training centers**, or **developers** looking to understand full-stack development with Java.
 
-## 🧩 Project Structure
+---
+
+## ✨ Key Highlights
+
+- ✅ Full-stack Java project (no external frontend technologies used)
+- 🌐 Frontend built using **Spring MVC + JSP / Thymeleaf**
+- 🔐 Secure login system for users and admins
+- 📋 Timed quizzes with MCQs
+- 🧾 Instant score calculation and display
+- 📊 Admin dashboard to manage quiz content
+- 📚 Organized question categories and difficulty levels (optional)
+- 💾 MySQL integration with smooth data flow using Spring JPA
+
+---
+
+## 🎯 Use Case Scenarios
+
+- Online aptitude or technical tests
+- School/college quiz systems
+- Training evaluation systems
+- Java-based full-stack learning project
 
 
 
-## 🧪 How to Run
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/online-quiz-app.git
 
 
- CREATE DATABASE quizdb;
-USE quizdb;
 
-CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(255),
-  password VARCHAR(255)
-);
 
-CREATE TABLE questions (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  question TEXT,
-  option_a TEXT,
-  option_b TEXT,
-  option_c TEXT,
-  option_d TEXT,
-  correct_answer VARCHAR(1)
-);
 
 
